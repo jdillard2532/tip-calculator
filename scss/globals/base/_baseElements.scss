@@ -1,0 +1,13 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: var(--font-primary);
+  background-color: var(--cyan-300);
+}
+
+h1 {
+  font-size: 2rem;
+  font-size: clamp(2rem, 1.311926605504587rem + 2.9357798165137616vw, 3rem);
+  margin: 0;
+  color: var(--cyan-600);
+}
