@@ -122,6 +122,11 @@ main {
   align-items: center;
   height: 100vh;
 }
+main .logo-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5.49rem;
+}
 main .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -259,8 +264,8 @@ main .input:last-of-type {
 }
 
 @media (max-width: 59.38rem) {
-  main {
-    height: auto;
+  main .logo-wrapper {
+    margin: 2.55rem 0;
   }
   main .container {
     grid-template-columns: 1fr;

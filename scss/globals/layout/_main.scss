@@ -3,6 +3,11 @@ main {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  .logo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5.49rem;
+  }
 
   .container {
     display: grid;
@@ -150,7 +155,9 @@ main {
 //950px
 @media (max-width: 59.38rem) {
   main {
-    height: auto;
+    .logo-wrapper {
+      margin: 2.55rem 0;
+    }
     .container {
       grid-template-columns: 1fr;
       max-width: 25rem;
