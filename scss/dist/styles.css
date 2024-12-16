@@ -145,6 +145,7 @@ main .container .bill-section {
 main .container .percent-section {
   display: flex;
   list-style: none;
+  width: 100%;
   gap: 0.88rem;
   padding: 0;
   flex-wrap: wrap;
@@ -157,7 +158,8 @@ main .container .percent-section .percentage {
   background-color: var(--cyan-700);
   border-radius: 12px;
   font-weight: 700;
-  width: 7.31rem;
+  max-width: 7.31rem;
+  width: 33%;
   text-align: center;
   border: none;
   color: var(--white);
@@ -177,7 +179,8 @@ main .container .percent-section #custom {
   color: var(--cyan-500);
   color: var(--cyan-700);
   max-width: 117px;
-  height: 52px;
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
   text-align: center;
   text-transform: uppercase;
@@ -264,6 +267,9 @@ main .input:last-of-type {
 }
 
 @media (max-width: 59.38rem) {
+  main .billInput {
+    margin-bottom: 1rem;
+  }
   main .logo-wrapper {
     margin: 2.55rem 0;
   }
@@ -272,11 +278,16 @@ main .input:last-of-type {
     max-width: 25rem;
     margin: 0;
   }
+  main .container .percent-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
   main .container .percent-section .percentage {
-    width: 9rem;
+    width: 100%;
+    max-width: none;
   }
   main .container .percent-section #custom {
-    width: 9rem;
+    width: 100%;
     max-width: none;
   }
 }
