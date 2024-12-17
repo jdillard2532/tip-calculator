@@ -18,10 +18,15 @@ resetButtonClear();
 input.forEach((e) => {
   e.addEventListener("keyup", function () {
     let error = document.querySelectorAll(".error-message");
+
     if (input[0].value < 0) {
       error[0].style.display = "block";
     } else {
       error[0].style.display = "none";
+      findPercentage();
+    }
+
+    if (input[1].value > 0) {
       findPercentage();
     }
 
@@ -42,18 +47,16 @@ form.addEventListener("keyup", function (e) {
     findPercentage();
     e.preventDefault();
   }
+
   resetButtonClear();
 });
-
-// percentEventListener();
 
 // //Custom % eventlistener
 custom.addEventListener("keyup", function () {
   for (let i = 0; i < percentage.length; i++) {
     percentage[i].style.backgroundColor = "var(--cyan-700)";
     percentage[i].style.color = "var(--white)";
-  }
-  if (custom.value === 0) {
+    percentage[i].classList.remove("active");
   }
   calculate(custom.value);
 });
@@ -64,7 +67,6 @@ resetButton.addEventListener("click", function () {
 });
 
 //Select %
-function percentEventListener() {}
 percentage.forEach((e) => {
   e.addEventListener("click", function (info) {
     custom.value = "";
@@ -80,6 +82,8 @@ percentage.forEach((e) => {
     calculate(info.target.value);
   });
 });
+
+//*******FUNCTIONS**************
 
 function calculate(x) {
   let tipPercent = Number(x) / 100;
@@ -101,6 +105,8 @@ function findPercentage() {
   percentage.forEach((e) => {
     if (e.classList.contains("active")) {
       calculate(e.value);
+    } else {
+      calculate(custom.value);
     }
   });
 }
