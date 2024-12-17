@@ -47,7 +47,6 @@ form.addEventListener("keyup", function (e) {
     findPercentage();
     e.preventDefault();
   }
-
   resetButtonClear();
 });
 
